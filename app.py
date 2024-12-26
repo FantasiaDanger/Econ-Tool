@@ -1,5 +1,3 @@
-Python 3.13.1 (v3.13.1:06714517797, Dec  3 2024, 14:00:22) [Clang 15.0.0 (clang-1500.3.9.4)] on darwin
-Type "help", "copyright", "credits" or "license()" for more information.
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
@@ -58,41 +56,41 @@ demand_slope = st.sidebar.slider("Demand Slope (Elasticity)", 1, 5, 2)
 # Supply Curve Parameters
 st.sidebar.subheader("Supply Curve")
 supply_intercept = st.sidebar.slider("Supply Intercept (Base Quantity)", 0, 50, 20)
-... supply_slope = st.sidebar.slider("Supply Slope (Elasticity)", 1, 5, 2)
-... 
-... # Additional Modifiers
-... st.sidebar.header("Market Modifiers")
-... tax = st.sidebar.slider("Tax", 0, 20, 0)
-... subsidy = st.sidebar.slider("Subsidy", 0, 20, 0)
-... externality = st.sidebar.slider("Externality", -20, 20, 0)
-... 
-... # Substitute Effects
-... st.sidebar.header("Substitute Product")
-... substitute_price = st.sidebar.slider("Substitute Price", 10, 100, 50)
-... 
-... # Market Flexibility
-... st.sidebar.header("Market Flexibility")
-... market_flexibility = st.sidebar.slider(
-...     "Market Flexibility (Higher = More Flexible)", 0.5, 2.0, 1.0, step=0.1
-... )
-... 
-... st.sidebar.write(
-...     """
-...     **Instructions**:
-...     - Use the sliders to adjust supply and demand parameters, substitute product price, market modifiers, and market flexibility.
-...     - Observe how the curves and equilibrium point change dynamically.
-...     """
-... )
-... 
-... # Plot the simulation with the selected parameters
-... plot_supply_demand(
-...     demand_intercept,
-...     demand_slope,
-...     supply_intercept,
-...     supply_slope,
-...     tax,
-...     subsidy,
-...     externality,
-...     substitute_price,
-...     market_flexibility,
-... )
+supply_slope = st.sidebar.slider("Supply Slope (Elasticity)", 1, 5, 2)
+
+# Additional Modifiers
+st.sidebar.header("Market Modifiers")
+tax = st.sidebar.slider("Tax", 0, 20, 0)
+subsidy = st.sidebar.slider("Subsidy", 0, 20, 0)
+externality = st.sidebar.slider("Externality", -20, 20, 0)
+
+# Substitute Effects
+st.sidebar.header("Substitute Product")
+substitute_price = st.sidebar.slider("Substitute Price", 10, 100, 50)
+
+# Market Flexibility
+st.sidebar.header("Market Flexibility")
+market_flexibility = st.sidebar.slider(
+    "Market Flexibility (Higher = More Flexible)", 0.5, 2.0, 1.0, step=0.1
+)
+
+st.sidebar.write(
+    """
+    **Instructions**:
+    - Use the sliders to adjust supply and demand parameters, substitute product price, market modifiers, and market flexibility.
+    - Observe how the curves and equilibrium point change dynamically.
+    """
+)
+
+# Plot the simulation with the selected parameters
+plot_supply_demand(
+    demand_intercept,
+    demand_slope,
+    supply_intercept,
+    supply_slope,
+    tax,
+    subsidy,
+    externality,
+    substitute_price,
+    market_flexibility,
+)
